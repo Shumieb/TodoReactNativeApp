@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, Pressable } from 'react-native'
 import MaterialIcons from '@expo/vector-icons/MaterialIcons'
 import Feather from '@expo/vector-icons/Feather'
 
-const TodoItem = ({ item, handleTodoEdit }) => {
+const TodoItem = ({ item, handleTodoEdit, handleDeleteTodo }) => {
     return (
         <View style={styles.item}>
             <Text style={styles.title}>{item.title}</Text>
@@ -14,7 +14,7 @@ const TodoItem = ({ item, handleTodoEdit }) => {
                     <Feather name="edit" size={24} color="#D8FFDB" />
                 </Pressable>
                 <Pressable
-                    onPress={() => console.log("delete btn clicked.....")}
+                    onPress={() => handleDeleteTodo(item.id)}
                 >
                     <MaterialIcons name="delete" size={24} color="#D96941" />
                 </Pressable>
